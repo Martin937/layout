@@ -1,0 +1,129 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Roboto', sans-serif;
+  font-style: normal;
+  font-weight: 400;
+}
+.container {
+  width: 1200px;
+  margin: 0 auto;
+  padding-right: 15px;
+  padding-left: 15px;
+  background: #c0dbd9;
+}
+.header,
+.footer {
+  height: 100px;
+  background: #7faff7;
+}
+.header {
+  display: flex;
+  align-items: center;
+}
+.footer {
+  margin-top: 100px;
+}
+.link {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: 30px;
+  width: 206px;
+  height: 39px;
+  background: #a5c7f9;
+  text-decoration: none;
+  border-radius: 5px;
+  font-size: 20px;
+  color: #ffffff;
+}
+.grid-blocks {
+  /* height: 411px; */
+  margin-top: 15px;
+  background: #b3f95a;
+  display: grid;
+  grid-template-columns: 390px 590px 160px;
+  grid-template-rows: repeat(2, 198px);
+  grid-gap: 15px;
+  counter-reset: blockNum;
+}
+.grid__block {
+  font-size: 53px;
+  line-height: 62px;
+  color: #ffffff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #8ad191;
+  counter-increment: blockNum;
+}
+.grid__block:after {
+  content: counter(blockNum);
+}
+.grid__block:nth-child(4n) {
+  grid-column: span 2;
+}
+.flex-blocks {
+  display: flex;
+  padding: 30px;
+  margin-top: 15px;
+  gap: 30px;
+  /* height: 259px; */
+  background: #88b5bf;
+}
+.flex__block {
+  width: 255px;
+  height: 199px;
+  background: #0d89b0;
+}
+.modal {
+  opacity: 0;
+  visibility: hidden;
+  transition: 0.3s ease-in;
+  position: fixed;
+}
+.modal:target {
+  opacity: 1;
+  visibility: visible;
+}
+/* --- */
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0, 0.25);
+  display: grid;
+  place-items: center;
+}
+.content {
+  width: 400px;
+  height: 400px;
+  background: #ffffff;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+h3 {
+  font-size: 53px;
+  line-height: 62px;
+}
+.close {
+  position: absolute;
+  right: 15px;
+  top: 15px;
+  text-decoration: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 43px;
+  height: 39px;
+  background: #7faff6;
+  border-radius: 5px;
+  font-size: 20px;
+  line-height: 23px;
+  color: #ffffff;
+}
